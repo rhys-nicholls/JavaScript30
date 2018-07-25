@@ -1,5 +1,5 @@
 # JavaScript30
----
+
 ## 1. JavaScript Drumkit
 ### Changes
 1. Script moved to seperate file
@@ -26,6 +26,12 @@
     z-index: 2;
   }
 ```
-3. Addded additonal check to negate the hands jumping when reaching full 360 degreees. Toggles class "skip" which sets transition: all  0s;
-
-
+3. Added additonal check to negate the hands jumping when reaching full 360 degreees. Toggles class "skip".
+```javascript
+    if (seconds === 0 || seconds === 1) secondHand.classList.toggle('skip');
+```
+```css
+ .skip {
+    transition: all  0s;
+  }
+```
