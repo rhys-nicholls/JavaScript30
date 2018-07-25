@@ -39,3 +39,15 @@
 ## 3. CSS Variables
 ### Changes
 1. Split index.html into seprate script.js, style.css and index.html
+
+## 4. Array Cardio Day 1
+### Changes
+1. Split index.html into seperate script.js and index.html
+2. Used different sort method
+```javascript
+const results3 = inventors.sort((a,b) => a.year - b.year);
+```
+insted of 
+```javascript
+const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+```
