@@ -1,4 +1,4 @@
-# JavaScript30
+![JavaScript 30 Banner](https://lh3.googleusercontent.com/S8slXDe-rMTb7LP89OATxZAMqVTr9OU7YNGUO5Dv1JcSSwYKbJZgtKTosvenoyZZUEbKO36K_AVQ)
 
 ## 1. JavaScript Drumkit
 ### Changes
