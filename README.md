@@ -35,3 +35,7 @@
     transition: all  0s;
   }
 ```
+
+## 3. CSS Variables
+### Changes
+1. Split index.html into seprate script.js, style.css and index.html
