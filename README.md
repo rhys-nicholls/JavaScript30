@@ -51,3 +51,11 @@ insted of
 ```javascript
 const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 ```
+
+## 4. Array Cardio Day 1
+### Changes
+1. Split index.html in seperate script, style and index files
+2. Changes images and text to theme of personal interest
+
+### TO DO
+1. Look into creating functionality that causes the panels to shrink back automatically when another is clicked
