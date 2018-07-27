@@ -60,6 +60,13 @@ const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 ### TO DO
 1. Look into creating functionality that causes the panels to shrink back automatically when another is clicked
 
-## 6. Flexbox Panel Gallery
+## 6. Ajax Type Ahead
 ### Changes
 1. Split index.html in seperate script and index files
+
+## 7. Array Cardio Day 2
+Done without watching video first, to text knowledge of Array methods
+
+### Changes
+1. Split index.html in seperate script and index files
+2. Created function to calculateAge
