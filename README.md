@@ -41,6 +41,8 @@
 1. Split index.html into seprate script.js, style.css and index.html
 
 ## 4. Array Cardio Day 1
+Done without watching video first, to test knowledge of Array methods
+
 ### Changes
 1. Split index.html into seperate script.js and index.html
 2. Used different sort method
@@ -62,11 +64,15 @@ const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 
 ## 6. Ajax Type Ahead
 ### Changes
-1. Split index.html in seperate script and index files
+1. Split index.html in to seperate script and index files
 
 ## 7. Array Cardio Day 2
-Done without watching video first, to text knowledge of Array methods
+Done without watching video first, to test knowledge of Array methods
 
 ### Changes
 1. Split index.html in seperate script and index files
 2. Created function to calculateAge
+
+## 8. Fun With HTML5 Canvas
+### Changes
+1. Split index in to seprate script, index and style files
