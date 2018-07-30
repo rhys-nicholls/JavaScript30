@@ -75,4 +75,11 @@ Done without watching video first, to test knowledge of Array methods
 
 ## 8. Fun With HTML5 Canvas
 ### Changes
-1. Split index in to seprate script, index and style files
+1. Split index in to seperate script, index and style files
+
+## 9. Fun With HTML5 Canvas
+### TODO
+
+## 10. Hold Shift and Check Checkboxes
+### Changes
+1. Split index in to seperate script, index and style files
