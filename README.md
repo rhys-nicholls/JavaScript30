@@ -158,3 +158,7 @@ Done without watching video first, to test knowledge of Array methods
     <div class="times"><span class="current__time">0:00</span> / <span class="duration__time">0:00</span></div>
 
     ```
+
+## 12. Key Sequence Detection (KONAMI CODE)
+### Changes
+1. Split index.html in seperate script and index files
