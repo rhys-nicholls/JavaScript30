@@ -6,6 +6,8 @@ const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip');
 const ranges = player.querySelectorAll('.player__slider');
+const curTime = player.querySelector('.current__time');
+const durTime = player.querySelector('.duration__time');
 
 /* Build Functions */
 
@@ -38,6 +40,27 @@ function handleRangeUpdate() {
 function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressBar.style.flexBasis = `${percent}%`;
+    updateTimes();
+}
+
+function convertTime(time) {
+    let hours = Math.floor(time / 3600);
+    let mins = Math.floor(time / 60);
+    let secs = Math.floor(time % 60);
+
+    if (mins < 10){
+        mins = `0${mins}`;
+    }
+    if (secs < 10) {
+        secs = `0${secs}`;
+    }
+
+    return hours > 0 ? `${hours}:${mins}:${secs}` : `${mins}:${secs}`;
+}
+
+function updateTimes(){
+    curTime.textContent = convertTime(video.currentTime);
+    durTime.textContent = convertTime(video.duration);
 }
 
 function scrub(event) {
@@ -45,8 +68,14 @@ function scrub(event) {
     video.currentTime = scrubTime;
 }
 
+function init() {
+    progressBar.style.flexBasis = '0%';
+    updateTimes();
+}
 
 /* Hook Up Event Listeners */
+window.addEventListener('load', init);
+
 let mousedown = false;
 progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (event) => mousedown && scrub(event));
