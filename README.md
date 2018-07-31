@@ -119,3 +119,42 @@ Done without watching video first, to test knowledge of Array methods
         this.paused ? toggle.textContent = '►' : toggle.textContent = '❚ ❚';
     }
     ```
+2. Added an on load Event Listener to the window object whcih runs an init function which does two things.
+
+    Sets progress bar to 0% on load, instead of when the video starts playing
+    ```javascript
+    progressBar.style.flexBasis = '0%';
+    ```
+    and runs updateTimes (See below)
+
+3. Added functionality that displays elapsed time and total duration of video along side the playback controls, updateTimes.
+
+    updateTimes calls convertTime which takes a time in seconds and converts it to hours, minutes and seconds. It then adds leading 0's if required, when the seconds or minutes is less than 9.
+
+    ```javascript
+    function updateTimes(){
+        curTime.textContent = convertTime(video.currentTime);
+        durTime.textContent = convertTime(video.duration);
+    }
+    ```
+    ```javascript
+    function convertTime(time) {
+        let hours = Math.floor(time / 3600);
+        let mins = Math.floor(time / 60);
+        let secs = Math.floor(time % 60);
+
+        if (mins < 10){
+            mins = `0${mins}`;
+        }
+        if (secs < 10) {
+            secs = `0${secs}`;
+        }
+
+        return hours > 0 ? `${hours}:${mins}:${secs}` : `${mins}:${secs}`;
+    }
+    ```
+    Finally updateTimes sets the text content of 2 spans that were added to index.html
+    ```html
+    <div class="times"><span class="current__time">0:00</span> / <span class="duration__time">0:00</span></div>
+
+    ```

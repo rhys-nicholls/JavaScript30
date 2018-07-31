@@ -154,3 +154,18 @@ input[type=range]::-moz-range-thumb {
   background: #ffc600;
   cursor: pointer;
 }
+
+.times {
+  flex: 0;
+  flex-basis: 15%;
+  width: 80px;
+  height: 30px;
+  padding: 0;
+	border-right: 1px solid #dddddd;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  color: #dddddd;
+	font-size: 11px;
+    text-align: center;
+    float: left;
+    line-height: 30px;
+}
