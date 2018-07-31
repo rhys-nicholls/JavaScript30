@@ -8,33 +8,33 @@
 ### Changes
 1. Split index.html into seprate script.js, style.css and index.html
 2. Added additional css to clock hands to make it clearer which hand is which 
-```css
-.min-hand {
-    width: 45%;
-    margin-left: 5%;
-    background:  #7d7d7d;
-  }
-  .hour-hand {
-    width: 30%;
-    margin-left: 20%;
-    background:  #535353;
-    z-index: 1;
-  }
-  .second-hand {
-    height: 3px;
-    background:  #9d9d9c;
-    z-index: 2;
-  }
-```
+    ```css
+    .min-hand {
+        width: 45%;
+        margin-left: 5%;
+        background:  #7d7d7d;
+      }
+      .hour-hand {
+        width: 30%;
+        margin-left: 20%;
+        background:  #535353;
+        z-index: 1;
+      }
+      .second-hand {
+        height: 3px;
+        background:  #9d9d9c;
+        z-index: 2;
+      }
+    ```
 3. Added additonal check to negate the hands jumping when reaching full 360 degreees. Toggles class "skip".
-```javascript
-    if (seconds === 0 || seconds === 1) secondHand.classList.toggle('skip');
-```
-```css
- .skip {
-    transition: all  0s;
-  }
-```
+    ```javascript
+        if (seconds === 0 || seconds === 1) secondHand.classList.toggle('skip');
+    ```
+    ```css
+    .skip {
+        transition: all  0s;
+      }
+    ```
 
 ## 3. CSS Variables
 ### Changes
@@ -46,13 +46,13 @@ Done without watching video first, to test knowledge of Array methods
 ### Changes
 1. Split index.html into seperate script.js and index.html
 2. Used different sort method
-```javascript
-const results3 = inventors.sort((a,b) => a.year - b.year);
-```
-insted of 
-```javascript
-const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-```
+    ```javascript
+    const results3 = inventors.sort((a,b) => a.year - b.year);
+    ```
+    insted of 
+    ```javascript
+    const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+    ```
 
 ## 5. Flexbox Panel Gallery
 ### Changes
@@ -72,14 +72,50 @@ Done without watching video first, to test knowledge of Array methods
 ### Changes
 1. Split index.html in seperate script and index files
 2. Created function to calculateAge
-
+    ```javaScript
+    function currentAge(yearOfBirth) {
+        return new Date().getFullYear() - yearOfBirth;
+    }
+    ```
 ## 8. Fun With HTML5 Canvas
 ### Changes
 1. Split index in to seperate script, index and style files
 
-## 9. Fun With HTML5 Canvas
+## 9. Dev Tools Domination
 ### TODO
 
 ## 10. Hold Shift and Check Checkboxes
 ### Changes
 1. Split index in to seperate script, index and style files
+
+## 11. Custom Video Player
+### Changes
+1. Simplified togglePlay and updateButton functions
+
+    Original togglePlay
+    ```javascript
+    function togglePlay() {
+      const method = video.paused ? 'play' : 'pause';
+      video[method]();
+    }
+    ```
+    Simplified togglePlay
+    ```javascript
+    function togglePlay() {
+        video.paused ? video.play() : video.pause();
+    }
+    ```
+    Original updateButton
+    ```javascript
+    function updateButton() {
+      const icon = this.paused ? '►' : '❚ ❚';
+      console.log(icon);
+      toggle.textContent = icon;
+    }
+    ```
+    Simplified updateButton
+    ```javascript
+    function updateButton() {
+        this.paused ? toggle.textContent = '►' : toggle.textContent = '❚ ❚';
+    }
+    ```

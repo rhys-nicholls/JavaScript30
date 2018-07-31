@@ -16,8 +16,7 @@ const comments = [
 ];
 
 function currentAge(yearOfBirth) {
-    const currentYear = (new Date()).getFullYear();
-    return currentYear - yearOfBirth;
+    return new Date().getFullYear() - yearOfBirth;
 }
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
