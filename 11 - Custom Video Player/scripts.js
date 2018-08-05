@@ -12,65 +12,65 @@ const durTime = player.querySelector('.duration__time');
 /* Build Functions */
 
 function togglePlay() {
-    video.paused ? video.play() : video.pause();
+  video.paused ? video.play() : video.pause();
 }
 
 function updateButton() {
-    this.paused ? toggle.textContent = '►' : toggle.textContent = '❚ ❚';
+  this.paused ? toggle.textContent = '►' : toggle.textContent = '❚ ❚';
 }
 
-function skip () {
-    video.currentTime += parseFloat(this.dataset.skip);
+function skip() {
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 function handleRangeUpdate() {
-    // Original attempt
-    /*
-    if (this.name === 'volume'){
-        video.volume = this.value;
-    } else if (this.name === 'playbackRate') {
-        video.playbackRate = this.value;
-    }
-    */
+  // Original attempt
+  /*
+  if (this.name === 'volume'){
+      video.volume = this.value;
+  } else if (this.name === 'playbackRate') {
+      video.playbackRate = this.value;
+  }
+  */
 
-    // Simplified
-    video[this.name] = this.value;
+  // Simplified
+  video[this.name] = this.value;
 }
 
 function handleProgress() {
-    const percent = (video.currentTime / video.duration) * 100;
-    progressBar.style.flexBasis = `${percent}%`;
-    updateTimes();
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+  updateTimes();
 }
 
 function convertTime(time) {
-    let hours = Math.floor(time / 3600);
-    let mins = Math.floor(time / 60);
-    let secs = Math.floor(time % 60);
+  let hours = Math.floor(time / 3600);
+  let mins = Math.floor(time / 60);
+  let secs = Math.floor(time % 60);
 
-    if (mins < 10){
-        mins = `0${mins}`;
-    }
-    if (secs < 10) {
-        secs = `0${secs}`;
-    }
+  if (mins < 10) {
+    mins = `0${mins}`;
+  }
+  if (secs < 10) {
+    secs = `0${secs}`;
+  }
 
-    return hours > 0 ? `${hours}:${mins}:${secs}` : `${mins}:${secs}`;
+  return hours > 0 ? `${hours}:${mins}:${secs}` : `${mins}:${secs}`;
 }
 
-function updateTimes(){
-    curTime.textContent = convertTime(video.currentTime);
-    durTime.textContent = convertTime(video.duration);
+function updateTimes() {
+  curTime.textContent = convertTime(video.currentTime);
+  durTime.textContent = convertTime(video.duration);
 }
 
 function scrub(event) {
-    const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
-    video.currentTime = scrubTime;
+  const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
 }
 
 function init() {
-    progressBar.style.flexBasis = '0%';
-    updateTimes();
+  progressBar.style.flexBasis = '0%';
+  updateTimes();
 }
 
 /* Hook Up Event Listeners */

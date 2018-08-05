@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Reference VS Copy</title>
 </head>
+
 <body>
 
   <script>
@@ -31,7 +33,7 @@
     //team[3] = 'Lux';
 
     // however what happens when we update that array?
-    
+
     // now here is the problem!
 
     // oh no - we have edited the original array too!
@@ -66,7 +68,7 @@
     // and think we make a copy:
     const captain = person;
     // how do we take a copy instead?
-    const cap2 = Object.assign({}, person, {number: 99, age: 24});
+    const cap2 = Object.assign({}, person, { number: 99, age: 24 });
 
     // We will hopefully soon see the object ...spread
 
@@ -84,4 +86,5 @@
   </script>
 
 </body>
+
 </html>
