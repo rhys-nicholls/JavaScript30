@@ -9,7 +9,7 @@ const stopButton = document.querySelector('#stop');
 msg.text = document.querySelector('[name="text"]').value;
 
 function populateVoices() {
-  voices = this.getVoices();
+  voices = synth.getVoices();
   voicesDropdown.innerHTML = voices
     .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})`)
     .join('');
